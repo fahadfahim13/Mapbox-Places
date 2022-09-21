@@ -1,1 +1,1 @@
-export const MOVIE_WEB_USER_TOKEN = 'USER_TOKEN';
+export const USER_TOKEN = 'MOVIE_WEB_USER_TOKEN';
