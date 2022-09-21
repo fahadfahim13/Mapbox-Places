@@ -2,6 +2,7 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 
 import { InputChangeAction, Inputs } from './types';
 import { REGISTER_INPUT_NAMES } from 'uicontainers/User/RegisterForm/types';
+import { registerAsync } from './thunks';
 
 const initialState: Inputs = {
   status: 'NotRegistered',
@@ -23,6 +24,18 @@ export const registerFormInputSlice = createSlice({
       state[REGISTER_INPUT_NAMES.EMAIL] = '';
       state[REGISTER_INPUT_NAMES.PASSWORD] = '';
     },
+  },
+  extraReducers: (builder) => {
+    builder
+      .addCase(registerAsync.pending, (state) => {
+        state.status = 'Pending';
+      })
+      .addCase(registerAsync.fulfilled, (state) => {
+        state.status = 'Registered';
+      })
+      .addCase(registerAsync.rejected, (state) => {
+        state.status = 'NotRegistered';
+      });
   },
 });
 

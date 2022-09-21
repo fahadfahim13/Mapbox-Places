@@ -4,7 +4,7 @@ import useRegisterFormInputs from './hook';
 import { Button, Form, Input } from 'antd';
 
 const RegisterForm = () => {
-  const { REGISTER_INPUTS } = useRegisterFormInputs();
+  const { REGISTER_INPUTS, register } = useRegisterFormInputs();
 
   return (
     <Form>
@@ -21,7 +21,7 @@ const RegisterForm = () => {
         </Form.Item>
       ))}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" onClick={(e) => console.log(e)}>
+        <Button type="primary" onClick={register}>
           Register
         </Button>
       </Form.Item>

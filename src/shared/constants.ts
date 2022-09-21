@@ -1,0 +1,1 @@
+export const MOVIE_WEB_USER_TOKEN = 'USER_TOKEN';

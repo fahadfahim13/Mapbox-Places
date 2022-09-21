@@ -7,3 +7,11 @@ export const ROUTES = {
     HOME
   }
 };
+
+export const BASE_API_ROUTE = process.env.REACT_APP_API_URL || "http://localhost:8888/api/";
+export const API_ROUTE = {
+  AUTH: {
+    REGISTER: BASE_API_ROUTE + 'auth/register',
+    LOGIN: BASE_API_ROUTE + 'auth/login',
+  }
+}

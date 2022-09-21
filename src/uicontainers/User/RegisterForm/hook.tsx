@@ -5,7 +5,7 @@ import { REGISTER_INPUT_NAMES } from './types';
 import { InputChangeAction, InputTypes } from 'store/RegisterFormInputs/types';
 import { Props } from 'components/InputField/types';
 
-import { changeRegisterFormValue } from 'store/RegisterFormInputs/actions';
+import { changeRegisterFormValue, registerAsync } from 'store/RegisterFormInputs/actions';
 import { selectRegisterFormInputs } from 'store/RegisterFormInputs/selectors';
 
 const useRegisterFormInputs = () => {
@@ -51,10 +51,11 @@ const useRegisterFormInputs = () => {
     },
   ];
 
-  const onFinish = (values: Record<string, string>) => {
-    console.log('Success:', values);
+  const register = () => {
+    dispatch(registerAsync({ ...registerFormItems }));
   };
-  return { REGISTER_INPUTS, onFinish };
+
+  return { REGISTER_INPUTS, register };
 };
 
 export default useRegisterFormInputs;

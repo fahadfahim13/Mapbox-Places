@@ -5,7 +5,7 @@ import { InputChangeAction, InputTypes } from 'store/LoginFormInputs/types';
 import { Props } from 'components/InputField/types';
 
 import { selectLoginFormInputs } from 'store/LoginFormInputs/selectors';
-import { changeLoginFormValue } from 'store/LoginFormInputs/actions';
+import { changeLoginFormValue, loginAsync } from 'store/LoginFormInputs/actions';
 import { REGISTER_INPUT_NAMES } from './types';
 
 const useLoginFormInputs = () => {
@@ -43,7 +43,11 @@ const useLoginFormInputs = () => {
     },
   ];
 
-  return { LOGIN_INPUTS };
+  const login = () => {
+    dispatch(loginAsync({ ...loginFormItems }));
+  };
+
+  return { LOGIN_INPUTS, login };
 };
 
 export default useLoginFormInputs;

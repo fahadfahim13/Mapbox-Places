@@ -4,7 +4,7 @@ import { Button, Form, Input } from 'antd';
 import useLoginFormInputs from './hook';
 
 const LoginForm = () => {
-  const { LOGIN_INPUTS } = useLoginFormInputs();
+  const { LOGIN_INPUTS, login } = useLoginFormInputs();
 
   return (
     <Form>
@@ -21,7 +21,7 @@ const LoginForm = () => {
         </Form.Item>
       ))}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
-        <Button type="primary" onClick={(e) => console.log(e)}>
+        <Button type="primary" onClick={login}>
           Login
         </Button>
       </Form.Item>
