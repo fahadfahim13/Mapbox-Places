@@ -22,9 +22,6 @@
 # webstorm
 .idea
 
-#remotion-poc
-/remotion-poc-sprint1
-
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
