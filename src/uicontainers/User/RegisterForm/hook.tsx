@@ -55,7 +55,7 @@ const useRegisterFormInputs = () => {
     dispatch(registerAsync({ ...registerFormItems }));
   };
 
-  return { REGISTER_INPUTS, register };
+  return { REGISTER_INPUTS, register, registerState: registerFormItems };
 };
 
 export default useRegisterFormInputs;

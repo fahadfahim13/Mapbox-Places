@@ -5,7 +5,10 @@ import { USER_TOKEN } from 'shared/constants';
 
 const useHomeLogic = () => {
   const loginState = useAppSelector(selectLoginFormInputs);
-  return { loggedIn: loginState.status === 'LoggedIn' || localStorage.getItem(USER_TOKEN) };
+  return {
+    loginState,
+    loggedIn: loginState.status === 'LoggedIn' || localStorage.getItem(USER_TOKEN),
+  };
 };
 
 export default useHomeLogic;

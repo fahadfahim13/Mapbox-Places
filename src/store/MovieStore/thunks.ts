@@ -4,9 +4,9 @@ import { get } from 'api/movie';
 
 export const fetchMovieAsync = createAsyncThunk(
   'movies/fetch',
-  async (props: { page: number; limit: number }, thunkAPI) => {
-    const { page, limit } = props;
-    const response = await get('', page, limit);
+  async (props: { value: string; page: number; limit: number }, thunkAPI) => {
+    const { value, page, limit } = props;
+    const response = await get(value, page, limit);
     if (response.status === 200 || response.status === 201) {
       return response.data;
     }

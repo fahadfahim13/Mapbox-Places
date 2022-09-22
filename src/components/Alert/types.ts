@@ -1,3 +1,4 @@
+import { AlertColor } from "@mui/material";
 import { SyntheticEvent, MouseEvent } from "react";
 import { VERTICAL, HORIZONTAL } from "shared/types";
 
@@ -8,4 +9,5 @@ export interface Props {
     vertical?: `${VERTICAL}`;
     horizontal?: `${HORIZONTAL}`;
     onClose: (event: SyntheticEvent | MouseEvent) => void;
+    severity?: AlertColor | undefined;
 }

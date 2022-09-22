@@ -1,10 +1,10 @@
 import React from 'react';
 
 import useRegisterFormInputs from './hook';
-import { Button, Form, Input } from 'antd';
+import { Button, Form, Input, Typography } from 'antd';
 
 const RegisterForm = () => {
-  const { REGISTER_INPUTS, register } = useRegisterFormInputs();
+  const { REGISTER_INPUTS, register, registerState } = useRegisterFormInputs();
 
   return (
     <Form>
@@ -21,6 +21,14 @@ const RegisterForm = () => {
         </Form.Item>
       ))}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
+        <Typography.Text type="danger">
+          {registerState.status === 'Failed' && (registerState.errorMessage?.toString() ?? '')}
+        </Typography.Text>
+        <br />
+        <Typography.Link type="success">
+          {registerState.status === 'Registered' && 'Successfully created account. Please login.'}
+        </Typography.Link>
+        <br />
         <Button type="primary" onClick={register}>
           Register
         </Button>

@@ -47,7 +47,12 @@ const useLoginFormInputs = () => {
     dispatch(loginAsync({ ...loginFormItems }));
   };
 
-  return { LOGIN_INPUTS, login };
+  return {
+    LOGIN_INPUTS,
+    login,
+    loginStatus: loginFormItems.status,
+    errorMessage: loginFormItems.errorMessage,
+  };
 };
 
 export default useLoginFormInputs;

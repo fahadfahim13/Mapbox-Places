@@ -35,10 +35,11 @@ export const registerFormInputSlice = createSlice({
       })
       .addCase(registerAsync.fulfilled, (state) => {
         state.status = 'Registered';
+        state.errorMessage = null;
       })
-      .addCase(registerAsync.rejected, (state, action) => {
+      .addCase(registerAsync.rejected, (state) => {
         state.status = 'Failed';
-        state.errorMessage = JSON.stringify(action.payload) ?? 'Invalid Registration';
+        state.errorMessage = 'Invalid Credentials';
       });
   },
 });
