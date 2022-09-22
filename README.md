@@ -24,7 +24,10 @@ npm install -g yarn
 yarn install
 ```
 
-## Available Scripts
+## Run Backend
+
+Go to the backend of this project in https://github.com/fahadfahim13/MovieWeb-be
+and run the backend.
 
 In the project directory, you can run:
 
@@ -36,6 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
 
+## Available Scripts
 ## Linting 
 
 We use a combination of ESLint and Prettier for linting. To run linting 
