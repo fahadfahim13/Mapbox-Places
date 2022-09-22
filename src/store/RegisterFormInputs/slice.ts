@@ -5,10 +5,11 @@ import { REGISTER_INPUT_NAMES } from 'uicontainers/User/RegisterForm/types';
 import { registerAsync } from './thunks';
 
 const initialState: Inputs = {
-  status: 'NotRegistered',
+  status: 'Idle',
   [REGISTER_INPUT_NAMES.NAME]: '',
   [REGISTER_INPUT_NAMES.EMAIL]: '',
   [REGISTER_INPUT_NAMES.PASSWORD]: '',
+  errorMessage: null,
 };
 
 export const registerFormInputSlice = createSlice({
@@ -20,9 +21,11 @@ export const registerFormInputSlice = createSlice({
       state[action.payload.key] = action.payload.value;
     },
     clearRegisterFormState: (state) => {
+      state.status = 'Idle';
       state[REGISTER_INPUT_NAMES.NAME] = '';
       state[REGISTER_INPUT_NAMES.EMAIL] = '';
       state[REGISTER_INPUT_NAMES.PASSWORD] = '';
+      state.errorMessage = null;
     },
   },
   extraReducers: (builder) => {
@@ -33,8 +36,9 @@ export const registerFormInputSlice = createSlice({
       .addCase(registerAsync.fulfilled, (state) => {
         state.status = 'Registered';
       })
-      .addCase(registerAsync.rejected, (state) => {
-        state.status = 'NotRegistered';
+      .addCase(registerAsync.rejected, (state, action) => {
+        state.status = 'Failed';
+        state.errorMessage = JSON.stringify(action.payload) ?? 'Invalid Registration';
       });
   },
 });

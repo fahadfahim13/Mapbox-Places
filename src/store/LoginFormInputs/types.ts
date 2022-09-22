@@ -1,9 +1,10 @@
 import { REGISTER_INPUT_NAMES } from 'uicontainers/User/RegisterForm/types';
 
 export interface Inputs {
-  status: 'LoggedIn' | 'LoggedOut' | 'Pending';
+  status: 'Idle' | 'LoggedIn' | 'LoggedOut' | 'Pending' | 'Failed';
   [REGISTER_INPUT_NAMES.EMAIL]: string;
   [REGISTER_INPUT_NAMES.PASSWORD]: string;
+  errorMessage: string | null;
 }
 
 export type InputTypes = REGISTER_INPUT_NAMES.EMAIL | REGISTER_INPUT_NAMES.PASSWORD;

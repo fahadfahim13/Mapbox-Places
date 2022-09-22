@@ -13,5 +13,9 @@ export const API_ROUTE = {
   AUTH: {
     REGISTER: BASE_API_ROUTE + 'auth/register',
     LOGIN: BASE_API_ROUTE + 'auth/login',
+  },
+  MOVIE: {
+    GET: BASE_API_ROUTE + 'movies/search',
+    SEARCH: BASE_API_ROUTE + 'movies/search',
   }
 }
