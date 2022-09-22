@@ -22,7 +22,8 @@ const RegisterForm = () => {
       ))}
       <Form.Item wrapperCol={{ offset: 8, span: 16 }}>
         <Typography.Text type="danger">
-          {registerState.status === 'Failed' && (registerState.errorMessage?.toString() ?? '')}
+          {registerState.status === 'Failed' &&
+            JSON.parse(registerState.errorMessage?.toString() ?? '')}
         </Typography.Text>
         <br />
         <Typography.Link type="success">

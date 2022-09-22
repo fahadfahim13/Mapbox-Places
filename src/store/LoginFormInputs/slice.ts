@@ -46,7 +46,7 @@ export const loginFormInputSlice = createSlice({
       .addCase(loginAsync.rejected, (state, action) => {
         state.status = 'Failed';
         console.log('In redux: ', action);
-        state.errorMessage = JSON.stringify(action.payload) ?? 'Invalid Login';
+        state.errorMessage = JSON.stringify(action.payload) ?? JSON.stringify('Invalid Login');
       });
   },
 });

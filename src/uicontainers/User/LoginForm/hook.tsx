@@ -44,6 +44,13 @@ const useLoginFormInputs = () => {
   ];
 
   const login = () => {
+    if (loginFormItems.email === '') {
+      alert('Enter a valid email');
+      return;
+    } else if (loginFormItems.password === '') {
+      alert('Enter a valid password');
+      return;
+    }
     dispatch(loginAsync({ ...loginFormItems }));
   };
 
