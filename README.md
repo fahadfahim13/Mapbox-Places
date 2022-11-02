@@ -1,4 +1,4 @@
-## Movie Web List
+## Mapbox Places
 
 ## Prerequisites
 

@@ -71,21 +71,6 @@ const MapContainer = () => {
             preview={false}
             onClick={() => setShowPopup(true)}
           />
-          {showPopup && (
-            <Popup
-              className="mapboxgl-popup"
-              longitude={city.longitude}
-              latitude={city.latitude}
-              anchor="bottom"
-              onClose={() => setShowPopup(false)}
-              // offsetTop={(5 * viewport.zoom) / 2}
-              // offsetLeft={(5 * viewport.zoom) / 2}
-              // width={viewport.zoom * 5}
-              // height={viewport.zoom * 5}
-            >
-              You are here
-            </Popup>
-          )}
         </Marker>
       </Map>
     </div>
