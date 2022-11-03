@@ -1,10 +1,10 @@
 import { Select } from 'antd';
 import * as React from 'react';
-import { CITIES, City } from './cities';
+import { CITIES, City } from '../../uicontainers/MapContainer/cities';
 
 const { Option } = Select;
 
-function ControlPanel(props: { onSelectCity: (city: City) => void }) {
+function CitySelection(props: { onSelectCity: (city: City) => void }) {
   const { onSelectCity } = props;
   return (
     <div className="control-panel">
@@ -21,4 +21,4 @@ function ControlPanel(props: { onSelectCity: (city: City) => void }) {
   );
 }
 
-export default React.memo(ControlPanel);
+export default React.memo(CitySelection);
