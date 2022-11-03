@@ -25,10 +25,10 @@ const CityList = (props: {onSelectCity: (city: City) => void}) => {
               setSelectedCityIdx(idx);
             }} 
             style={{ cursor: 'pointer', 
-                     backgroundColor: idx === selectedCityIdx? 'crimson': 'white', 
+                     backgroundColor: idx === selectedCityIdx? 'beige': 'white', 
                      textAlign: 'center' 
                   }}>
-              <List.Item.Meta style={{color: idx === selectedCityIdx? 'HighlightText': 'black'}}
+              <List.Item.Meta
                 title={item.city}
               />
             </List.Item>
