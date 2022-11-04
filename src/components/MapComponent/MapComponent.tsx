@@ -40,4 +40,4 @@ const MapComponent = (props: {viewport: ViewPort; setViewPort: (viewport: ViewPo
   )
 }
 
-export default MapComponent
+export default MapComponent;
